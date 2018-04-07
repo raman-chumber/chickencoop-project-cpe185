@@ -1,6 +1,6 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This repo is project for CPE 185 lab for Spring 2018 at Sac State University.
 
 ### What is this repository for? ###
 
