@@ -32,6 +32,7 @@ def getTemp(address):
     tdecimal = (byte_tmsb >> 7) * 2**(-1) + ((byte_tmsb & 0x40) >> 6) * 2**(-2)
     return tinteger + tdecimal
 
-Celsius = getTemp(address)
-Fahrenheit = 9.0/5.0 * Celsius + 32
-print Fahrenheit, "*F /", Celsius, "*C"
+while True:
+	Celsius = getTemp(address)
+	Fahrenheit = 9.0/5.0 * Celsius + 32
+	print Fahrenheit, "*F /", Celsius, "*C"
