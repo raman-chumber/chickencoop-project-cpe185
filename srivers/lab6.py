@@ -1,4 +1,4 @@
-#!/home/pi/Documents/lab6
+#!/home/pi/Project/srivers/lab6
 # Import required libraries
 import sys
 import time
@@ -21,19 +21,13 @@ try:
           [0, 0, 1, 1],
           [0, 0, 0, 1]]
     StepCount = len(Seq)
-    StepDir = 1       
-        
-# Read wait time from command line
-    if len(sys.argv)>1:
-        WaitTime = int(sys.argv[1])/float(1000)
-    else:
-        WaitTime = 10/float(1000)
-        
+    StepDir = 1
+    WaitTime = 0.002
 # Initialize variables
     StepCounter = 0
     LoopCounter = 0
-    loopmultiplier = 4500 #approx 1 rev
-    TotalLoops = 1*loopmultiplier # gives approx n turns
+    loopmultiplier = 1600 #approx 1 rev
+    TotalLoops = 5*loopmultiplier # gives approx n turns
     Looper = bool(1) # statement to break loop
     print("feeder start")
 #start main loop
