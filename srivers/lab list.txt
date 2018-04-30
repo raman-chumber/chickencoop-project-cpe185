@@ -1,0 +1,5 @@
+lab 6 - stepper motor: console tells user when feeder starts and stops
+lab 7 - water valve: console tells user when valve opens and closes
+lab 8 - touch sensor: console tells user when the touch sensor pressed
+lab 9 - IR remote control- 1 to start stepper motor, 2 to start water valve
+lab 10 - led screen: console messages from previous labs displayed on screen
