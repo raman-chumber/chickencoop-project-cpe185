@@ -18,7 +18,7 @@ try:
 	# set time for valve to operate in sec
         ValveTime=10
         
-	while(on):
+        while(on):
         # while on, turn on transistor
            GPIO.output(basepin, GPIO.HIGH)
            print("Valve open")
