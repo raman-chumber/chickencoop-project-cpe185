@@ -1,0 +1,64 @@
+#include "dht.h"
+#define dht_apin A0 // Analog Pin sensor is connected to
+ 
+dht DHT;
+
+int relay = 8;
+volatile byte relayState = LOW;
+
+int TEMPInterrupt = A0;
+
+void setup(){
+ 
+  Serial.begin(9600);
+  delay(500);//Delay to let system boot
+  //Serial.writeln("DHT11 Humidity & temperature Sensor\n\n");
+  Serial.println("DHT11 Humidity & temperature Sensor\n\n");
+  delay(1000);//Wait before accessing Sensor
+}
+ 
+void loop(){
+    DHT.read11(dht_apin);
+    
+    Serial.print("Current humidity = ");
+    Serial.print(DHT.humidity);
+    Serial.print("%  ");
+    Serial.print("temperature = ");
+    Serial.print(DHT.temperature); 
+    Serial.println("C  ");
+    
+    delay(1000);//Wait 1 second before accessing sensor again.
+}
+
+void relayA() {
+  // Pin for relay module set as output
+  pinMode(relay, OUTPUT);
+  digitalWrite(relay, HIGH);
+  // PIR motion sensor set as an input
+  pinMode(TEMPInterrupt, INPUT);
+  // Triggers detectMotion function on rising mode to turn the relay on, if the condition is met
+  attachInterrupt(digitalPinToInterrupt(TEMPInterrupt), detectTemp, RISING);
+  // Serial communication for debugging purposes
+  Serial.begin(9600);
+}
+
+void loops() {
+  // If 10 seconds have passed, the relay is turned off
+  if((millis() - lastDebounceTime) > debounceDelay && relayState == HIGH){
+    digitalWrite(relay, HIGH);
+    relayState = LOW;
+    Serial.println("OFF");
+  }
+  delay(50);
+}
+
+void detectTemp() {// Loop for temp
+  Serial.println("TEMP");
+  if(DHT.temperature < 27){
+     relayState == LOW;
+    digitalWrite(relay, LOW);
+  }
+  relayState = HIGH;  
+  Serial.println("ON");
+  lastDebounceTime = millis();
+}
