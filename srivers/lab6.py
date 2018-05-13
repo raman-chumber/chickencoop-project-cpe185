@@ -14,24 +14,26 @@ try:
 # GPIO2, GPIO3, GPIO4, GPIO17
     StepPins = [2, 3, 4, 17]
     GPIO.setup(StepPins, GPIO.OUT)
-    Seq = [[1, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 1, 1, 0],
-          [0, 0, 1, 0],
-          [0, 0, 1, 1],
-          [0, 0, 0, 1]]
+    Seq = [[1, 0, 0, 0],
+           [1, 1, 0, 0],
+           [0, 1, 0, 0],
+           [0, 1, 1, 0],
+           [0, 0, 1, 0],
+           [0, 0, 1, 1],
+           [0, 0, 0, 1],
+           [1, 0, 0, 1]]
     StepCount = len(Seq)
     StepDir = 1
-    WaitTime = 0.002
+    WaitTime = 0.001
 # Initialize variables
     StepCounter = 0
     LoopCounter = 0
     loopmultiplier = 1600 #approx 1 rev
     TotalLoops = 5*loopmultiplier # gives approx n turns
-    Looper = bool(1) # statement to break loop
+    Loops = bool(1) # statement to break loop
     print("feeder start")
 #start main loop
-    while(Looper):
+    while(Loops):
         
         #print(StepCounter),
         #print(Seq[StepCounter])
@@ -49,7 +51,7 @@ try:
         LoopCounter += StepDir
         # statement to stop motor
         if (LoopCounter==TotalLoops):
-            Looper = bool(0)
+            Loops = bool(0)
             print("feeder stop")
         # If the sequence ends
         # start again
