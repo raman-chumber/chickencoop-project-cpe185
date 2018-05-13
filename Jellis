@@ -1,1 +1,8 @@
+
 raspistill -t 30000 -tl 2000 -o image%04d.jpg
+
+sudo apt-get install apache2 php5 libapache2-mod-php5
+
+cd /var/www/
+sudo nano index.html
+
