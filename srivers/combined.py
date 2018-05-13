@@ -1,5 +1,3 @@
-# ~/project/srivers/lab8.py
-# import required libraries
 import time
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
