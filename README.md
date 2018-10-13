@@ -8,6 +8,8 @@ This repo is project for CPE 185 (Computer Interfacing) lab for Spring 2018 at S
 5. Smoke detector that will activate a small sprinkler off of the waterer’s supply if smoke is detected as a fire safety device if the heat lamps fail. 
 6. Motor will be used to spin an arm that spreads feed out at specified times.
 
+# Video Demonstrations [click to view](https://youtu.be/nDml8yVoEi4)
+
 ## Main Sub-Functions ##
 
 ### 3.1 Water supply, feeder, and solar power system – Ramandeep ###
