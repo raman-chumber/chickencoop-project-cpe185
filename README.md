@@ -1,7 +1,7 @@
 
 # README #
 
-#### This project is done by 4 team members. to check my part of the project click on folder rchumber
+#### This project is done by 4 team members. To check my part of the project click on folder rchumber
 
 This repo is project for CPE 185 (Computer Interfacing) lab for Spring 2018 at Sac State University. This project involves designing and implementing a Smart Chicken Coop. The design requires sensors and communication systems to make it easy for someone who has limited time or experience to be able to house chickens safely. 
 1. Temperature sensor will use controllers to determine the intensity of heat lamps.
